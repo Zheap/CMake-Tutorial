@@ -1,0 +1,4 @@
+D:\Code\CMake-Tutorial\Step4/bin/Tutorial.exe
+D:\Code\CMake-Tutorial\Step4/include/TutorialConfig.h
+D:\Code\CMake-Tutorial\Step4/lib/MathFunctions.lib
+D:\Code\CMake-Tutorial\Step4/include/MathFunctions.h
