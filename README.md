@@ -34,6 +34,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 CMAKE_CURRENT_SOURCE_DIR: D:/Code/CMake-Tutorial/Step2/MathFunctions
 ```
 
+#### CMAKE_CURRENT_BINARY_DIR
+
+当前CMakeLists.txt所处的对应编译目录
+
+```
+CMAKE_CURRENT_BINARY_DIR: D:/Code/CMake-Tutorial/Step6/build/MathFunctions
+```
+
+
+
 #### CheckCXXSourceCompiles
 
 CMake内置的模块，可以来检查当前平台是否支持某个C++库函数
@@ -248,6 +258,28 @@ function(do_test target arg result)
     PROPERTIES PASS_REGULAR_EXPRESSION ${result}
   )
 endfunction()
+```
+
+#### add_custom_command
+
+CMake中添加编译时的自定义执行命令，比如执行XX程序，拷贝XX文件等，**cmake --build**时执行
+
+```
+add_custom_command(
+  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Table.h
+  COMMAND MakeTable ${CMAKE_CURRENT_BINARY_DIR}/Table.h
+  DEPENDS MakeTable
+)
+```
+
+![image-20220721130019705](.\resource\image-20220721130019705.png)
+
+#### message
+
+CMakeLists.txt中用于打印日志的，FETAL_ERROR标识可以用于断住编译，**cmake ..**时执行
+
+```
+message("CMAKE_CURRENT_BINARY_DIR: " ${CMAKE_CURRENT_BINARY_DIR})
 ```
 
 
@@ -503,3 +535,10 @@ test 9
 Total Test time (real) =   0.23 sec
 ```
 
+#### cmake  |  cmake --build
+
+例如**cmake ..**命令，是在构建目录生成项目文件的project files，官方文档中又叫 **build tree | binary tree**，这其中就包括Makefile等
+
+其次，是对生成好的项目project files进行构建编译，这个就是**cmake --build**所做的事情，而**cmake --build .**后面的 **.** 就是指定生成好的build tree路径，即上一步骤中cmake .. 生成的project files所在的位置
+
+cmake只是构建器build generator的一种，如果系统用的是Unix Makefiles，完全可以直接用make进行项目构建
