@@ -1,0 +1,6 @@
+用于 .NET Framework 的 Microsoft (R) 生成引擎版本 17.1.0+ae57d105c
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+  MakeTable.vcxproj -> D:\Code\CMake-Tutorial\Step8\build\MathFunctions\Debug\MakeTable.exe
+  MathFunctions.vcxproj -> D:\Code\CMake-Tutorial\Step8\build\MathFunctions\Debug\MathFunctions.lib
+  Tutorial.vcxproj -> D:\Code\CMake-Tutorial\Step8\build\Debug\Tutorial.exe

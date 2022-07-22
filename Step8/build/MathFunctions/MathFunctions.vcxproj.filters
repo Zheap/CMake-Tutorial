@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Code\CMake-Tutorial\Step8\MathFunctions\mysqrt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Code\CMake-Tutorial\Step8\build\MathFunctions\Table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Code\CMake-Tutorial\Step8\build\CMakeFiles\f3c74813b3649b27e4bdb3fa5e255d65\Table.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Code\CMake-Tutorial\Step8\MathFunctions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{AA61F2EE-80AB-3F1A-9F0E-7876CF7050E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{BA5CF84D-4D72-357D-A9F2-D4B9ED084A19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9785CAFA-CCB3-30FF-84A3-17A1040198C1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

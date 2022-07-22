@@ -1,5 +1,5 @@
 # first we add the executable that generates the table
-add_executable(MakeTable MakeTable.cxx)
+add_executable(MakeTable MakeTable.cpp)
 
 # add the command to generate the source code
 add_custom_command(
@@ -10,7 +10,7 @@ add_custom_command(
 
 # add the main library
 add_library(MathFunctions
-            mysqrt.cxx
+            mysqrt.cpp
             ${CMAKE_CURRENT_BINARY_DIR}/Table.h
             )
 

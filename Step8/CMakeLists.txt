@@ -21,7 +21,7 @@ if(USE_MYMATH)
 endif()
 
 # add the executable
-add_executable(Tutorial tutorial.cxx)
+add_executable(Tutorial tutorial.cpp)
 target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
 
 # add the binary tree to the search path for include files
@@ -36,8 +36,8 @@ install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
   DESTINATION include
   )
 
-# enable testing
-enable_testing()
+# enable dashboard scripting
+include(CTest)
 
 # does the application run
 add_test(NAME Runs COMMAND Tutorial 25)

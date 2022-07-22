@@ -334,7 +334,7 @@ cmake --install . --prefix "D:\Code\CMake-Tutorial\Step4" // 指定路径，这�
 
 2. add_test(NAME XXX COMMAND YYY ZZZ)
 
-3. 命令行执行**ctest -N**(查看一共有多少个test)，**ctest -VV**(执行test)，如果使用多配置编辑器生成的，如vs，还需要指定mode，比如**ctest -C Debug -VV**，或
+3. 命令行执行**ctest -N**(查看一共有多少个test)，**ctest -VV**(执行test)，**-VV**是表示打印xiang'xi如果使用多配置编辑器生成的，如vs，还需要指定mode，比如**ctest -C Debug -VV**，或
 
    **ctest -C Release -VV**；执行命令的话需要在binary文件夹下执行，这里我理解是PROJECT_BINARY_DIR，即build目录
 
@@ -542,3 +542,20 @@ Total Test time (real) =   0.23 sec
 其次，是对生成好的项目project files进行构建编译，这个就是**cmake --build**所做的事情，而**cmake --build .**后面的 **.** 就是指定生成好的build tree路径，即上一步骤中cmake .. 生成的project files所在的位置
 
 cmake只是构建器build generator的一种，如果系统用的是Unix Makefiles，完全可以直接用make进行项目构建
+
+#### CPack 生成安装包
+
+1. 程序对应的CMakeLists.txt末尾加上下面配置，并依次进行**cmake ..  ， cmake --build .** ，这里默认是Debug，如果后面cpack是打包Release版本的话，这里需要进行 **cmake --build . --config Release** 的命令执行
+
+```
+include(InstallRequiredSystemLibraries)									    // 引入当前平台工程所需的Runtime library
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")  // 设置license的存储位置以及版本号
+set(CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+set(CPACK_SOURCE_GENERATOR "TGZ")											// 设置文件格式
+include(CPack)																// 引入CPack module
+```
+
+2. 命令行执行 **cpack -G ZIP -C Debug**，**-C**默认不指定的话是Release版本，**-G**是指定打包工具，可以通过 **cpack --help** 来查看当前支持的打包类型
+
+   ![image-20220722113232511](.\resource\image-20220722113232511.png)

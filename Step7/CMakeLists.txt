@@ -21,7 +21,7 @@ if(USE_MYMATH)
 endif()
 
 # add the executable
-add_executable(Tutorial tutorial.cxx)
+add_executable(Tutorial tutorial.cpp)
 target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
 
 # add the binary tree to the search path for include files
@@ -64,3 +64,11 @@ do_test(Tutorial 7 "7 is 2.645")
 do_test(Tutorial 25 "25 is 5")
 do_test(Tutorial -25 "-25 is (-nan|nan|0)")
 do_test(Tutorial 0.0001 "0.0001 is 0.01")
+
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+set(CPACK_SOURCE_GENERATOR "TGZ")
+include(CPack)
+
