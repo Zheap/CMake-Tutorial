@@ -1,0 +1,20 @@
+^D:\CODE\CMAKE-TUTORIAL\STEP9\BUILD\CMAKEFILES\8988E7B1740F0A23321F20B905662FAE\TABLE.H.RULE
+setlocal
+..\Debug\MakeTable.exe D:/Code/CMake-Tutorial/Step9/build/MathFunctions/Table.h
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\CODE\CMAKE-TUTORIAL\STEP9\MATHFUNCTIONS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code/CMake-Tutorial/Step9 -BD:/Code/CMake-Tutorial/Step9/build --check-stamp-file D:/Code/CMake-Tutorial/Step9/build/MathFunctions/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
