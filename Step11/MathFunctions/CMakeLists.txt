@@ -1,10 +1,12 @@
 # add the library that runs
-add_library(MathFunctions MathFunctions.cxx)
+add_library(MathFunctions MathFunctions.cpp)
 
 # state that anybody linking to us needs to include the current source dir
 # to find MathFunctions.h, while we don't.
 target_include_directories(MathFunctions
-                           INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
+                           INTERFACE
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+                           $<INSTALL_INTERFACE:include>
                            )
 
 # should we use our own math functions
@@ -14,7 +16,7 @@ if(USE_MYMATH)
   target_compile_definitions(MathFunctions PRIVATE "USE_MYMATH")
 
   # first we add the executable that generates the table
-  add_executable(MakeTable MakeTable.cxx)
+  add_executable(MakeTable MakeTable.cpp)
   target_link_libraries(MakeTable PRIVATE tutorial_compiler_flags)
 
   # add the command to generate the source code
@@ -26,7 +28,7 @@ if(USE_MYMATH)
 
   # library that just does sqrt
   add_library(SqrtLibrary STATIC
-              mysqrt.cxx
+              mysqrt.cpp
               ${CMAKE_CURRENT_BINARY_DIR}/Table.h
               )
 
@@ -55,5 +57,7 @@ set(installable_libs MathFunctions tutorial_compiler_flags)
 if(TARGET SqrtLibrary)
   list(APPEND installable_libs SqrtLibrary)
 endif()
-install(TARGETS ${installable_libs} DESTINATION lib)
+install(TARGETS ${installable_libs} 
+        EXPORT MathFunctionsTargets
+        DESTINATION lib)
 install(FILES MathFunctions.h DESTINATION include)

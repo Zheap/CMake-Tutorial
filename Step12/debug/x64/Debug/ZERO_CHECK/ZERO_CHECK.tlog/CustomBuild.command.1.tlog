@@ -1,0 +1,10 @@
+^D:\CODE\CMAKE-TUTORIAL\STEP12\DEBUG\CMAKEFILES\A10A105450D12F517E8DC7FFC77E19CC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Code/CMake-Tutorial/Step12 -BD:/Code/CMake-Tutorial/Step12/debug --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Code/CMake-Tutorial/Step12/debug/Tutorial.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

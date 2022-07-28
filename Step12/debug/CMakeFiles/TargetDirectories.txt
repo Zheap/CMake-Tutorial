@@ -1,0 +1,12 @@
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/Tutorial.dir
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/PACKAGE.dir
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/RUN_TESTS.dir
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/INSTALL.dir
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/ALL_BUILD.dir
+D:/Code/CMake-Tutorial/Step12/debug/CMakeFiles/ZERO_CHECK.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/MathFunctions.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/MakeTable.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/SqrtLibrary.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/PACKAGE.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/RUN_TESTS.dir
+D:/Code/CMake-Tutorial/Step12/debug/MathFunctions/CMakeFiles/INSTALL.dir
